@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #0F0F12;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="KeystormArena.fxcore.FXMLController">
+    <children>
+        <Button fx:id="btnStart" layoutX="200.0" layoutY="144.0" onAction="#btnStartA" onMouseEntered="#ButtonEntered" onMouseExited="#ButtonExited" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Start" textFill="#eaeaea">
+         <font>
+            <Font name="Consolas" size="34.0" />
+         </font></Button>
+        <Label fx:id="lblTitle" layoutX="156.0" layoutY="8.0" minHeight="16" minWidth="69" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="87.0" prefWidth="296.0" text="KeyStorm Arena" textFill="#eaeaea">
+         <font>
+            <Font size="41.0" />
+         </font></Label>
+      <Button fx:id="btnExit" layoutX="200.0" layoutY="254.0" onAction="#btnExitA" onMouseEntered="#ButtonEntered" onMouseExited="#ButtonExited" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Exit" textFill="#eaeaea">
+         <font>
+            <Font name="Consolas" size="34.0" />
+         </font>
+      </Button>
+      <Label fx:id="Akey" layoutX="40.0" layoutY="82.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="78.0" prefWidth="29.0" rotate="-9.8" text="A" textFill="#eaeaea">
+         <font>
+            <Font name="Consolas Bold" size="73.0" />
+         </font>
+      </Label>
+      <Label fx:id="Skey" layoutX="90.0" layoutY="182.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="78.0" prefWidth="29.0" rotate="-2.7" text="S" textFill="#eaeaea">
+         <font>
+            <Font name="Consolas Bold" size="73.0" />
+         </font>
+      </Label>
+      <Label fx:id="Dkey" layoutX="40.0" layoutY="288.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="78.0" prefWidth="29.0" rotate="10.5" text="D" textFill="#eaeaea">
+         <font>
+            <Font name="Consolas Bold" size="73.0" />
+         </font>
+      </Label>
+      <Label fx:id="Jkey" layoutX="501.0" layoutY="85.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="78.0" prefWidth="29.0" rotate="9.0" text="J" textFill="#eaeaea">
+         <font>
+            <Font name="Consolas Bold" size="73.0" />
+         </font>
+      </Label>
+      <Label fx:id="Kkey" layoutX="444.0" layoutY="182.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="78.0" prefWidth="29.0" rotate="14.5" text="K" textFill="#eaeaea">
+         <font>
+            <Font name="Consolas Bold" size="73.0" />
+         </font>
+      </Label>
+      <Label fx:id="Lkey" layoutX="474.0" layoutY="288.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="78.0" prefWidth="29.0" rotate="-10.5" text="L" textFill="#eaeaea">
+         <font>
+            <Font name="Consolas Bold" size="73.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
