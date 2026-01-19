@@ -15,6 +15,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.scene.shape.Line;
 import javafx.util.Duration;
 import javafx.animation.KeyFrame;
@@ -22,6 +25,11 @@ import javafx.animation.Timeline;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.Collections;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 public class GameController implements Initializable {
     @FXML
@@ -61,60 +69,90 @@ public class GameController implements Initializable {
 
     @FXML
     private Label Skey2;
-
+    @FXML
+    private MediaView MediaViewIntro;
     @FXML
     private Label lblAddScore;
 
     @FXML
     private Label lblScore;
-
+    boolean addscore = false;
     int score = 0;
-    int random=0;
+    int random = 0;
     Timeline fallingkeys = new Timeline(new KeyFrame(Duration.millis(5), ae -> keys()));
     Image test = new Image(getClass().getResource("/image.png").toString());
     ArrayList<Integer> list = new ArrayList<>();
     ArrayList<Label> keysList = new ArrayList<>();
     ArrayList<Label> keysListCopy = new ArrayList<>();
-
+    Media media = new Media(getClass().getResource("/Intro.mp4").toString());
+    MediaPlayer mediaPlayer = new MediaPlayer(media);
     Timeline Keychooser = new Timeline(new KeyFrame(Duration.millis(500), ae -> KeyChooser()));
-
+    int introtime = 0;
+   
     private void KeyChooser() {
-       try {
-         random = ThreadLocalRandom.current().nextInt(0, keysList.size()+1);
-         if (keysList.size()!=0){
-            keysList.get(random).setVisible(true);
-            keysList.get(random).setLayoutX(ThreadLocalRandom.current().nextInt(36, 534 + 1));
-            keysList.remove(random);
+        if(score<0){
+            System.exit(0);
+        }
+        try {
+            random = ThreadLocalRandom.current().nextInt(0, keysList.size() + 1);
+            if (keysList.size() != 0) {
+                keysList.get(random).setVisible(true);
+                keysList.get(random).setLayoutX(ThreadLocalRandom.current().nextInt(36, 534 + 1));
+                keysList.remove(random);
             }
-       } catch (Exception e) {
-        // TODO: handle exception
-       }
-       
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
     }
 
     private void keys() {
-
-        if (score < 500) {
-
+        if(addscore){
            
+            lblAddScore.setOpacity(lblAddScore.getOpacity()-0.005);
+        }
+        lblScore.setText("Score: " + score);
+        introtime += 1;
+        if (introtime > 260) {
+            MediaViewIntro.setVisible(false);
+        }
+       
+
             // moving keys
 
             for (Label name : keysListCopy) {
                 if (name.isVisible()) {
+                    if(score<=1000){
+                        
                     name.setTranslateY(name.getTranslateY() + 0.3);
+                    }
+                    if(score>=1000&&score<2000){
+                        name.setTranslateY(name.getTranslateY() + 0.5);
+                    }
+                    if(score>=2000){
+                        name.setTranslateY(name.getTranslateY() + 0.8);
+                    }
+                    if(score>3000){
+                        name.setTranslateY(name.getTranslateY() + 1);
+                    }
                 }
                 if (name.getTranslateY() > 500) {
+                  
+                 
                     name.setTranslateY(0);
                     name.setVisible(false);
                     keysList.add(name);
+                    score-=50;
 
                 }
+
             }
 
-        }
+        
+
     }
 
-    public boolean collision(Label block1, Label block2) {
+    public boolean collision(Label block1, Line block2) {
         // returns true if the areas intersect, false if they dont
         return (block1.getBoundsInParent().intersects(block2.getBoundsInParent()));
     }
@@ -129,9 +167,110 @@ public class GameController implements Initializable {
 
     }
 
+    @FXML
+    void KeyPressed(KeyEvent event) {
+        score-=50;
+        if (collision(Lkey2, Bar) && event.getCode() == KeyCode.L) {
+            score += 100;
+            Lkey2.setVisible(false);
+            Lkey2.setTranslateY(0);
+            keysList.add(Lkey2);
+            addscore = true;
+            lblAddScore.setOpacity(1);
+        }
+        if (collision(Lkey1, Bar) && event.getCode() == KeyCode.L) {
+            score += 100;
+            Lkey1.setVisible(false);
+            Lkey1.setTranslateY(0);
+            keysList.add(Lkey1);
+            addscore = true;
+            lblAddScore.setOpacity(1);
+        }
+        if (collision(Kkey2, Bar) && event.getCode() == KeyCode.K) {
+            score += 100;
+            Kkey2.setVisible(false);
+            Kkey2.setTranslateY(0);
+            keysList.add(Kkey2);
+            addscore = true;
+            lblAddScore.setOpacity(1);
+        }
+        if (collision(Kkey1, Bar) && event.getCode() == KeyCode.K) {
+            score += 100;
+            Kkey1.setVisible(false);
+            Kkey1.setTranslateY(0);
+            keysList.add(Kkey1);
+            addscore = true;
+            lblAddScore.setOpacity(1);
+        }
+        if (collision(Jkey2, Bar) && event.getCode() == KeyCode.J) {
+            score += 100;
+            Jkey2.setVisible(false);
+            Jkey2.setTranslateY(0);
+            keysList.add(Jkey2);
+            addscore = true;
+            lblAddScore.setOpacity(1);
+        }
+        if (collision(Jkey1, Bar) && event.getCode() == KeyCode.J) {
+            score += 100;
+            Jkey1.setVisible(false);
+            Jkey1.setTranslateY(0);
+            keysList.add(Jkey1);
+            addscore = true;
+            lblAddScore.setOpacity(1);
+        }
+        if (collision(Dkey2, Bar) && event.getCode() == KeyCode.D) {
+            score += 100;
+            Dkey2.setVisible(false);
+            Dkey2.setTranslateY(0);
+            keysList.add(Dkey2);
+            addscore = true;
+            lblAddScore.setOpacity(1);
+        }
+        if (collision(Dkey1, Bar) && event.getCode() == KeyCode.D) {
+            score += 100;
+            Dkey1.setVisible(false);
+            Dkey1.setTranslateY(0);
+            keysList.add(Dkey1);
+            addscore = true;
+            lblAddScore.setOpacity(1);
+        }
+        if (collision(Skey1, Bar) && event.getCode() == KeyCode.S) {
+            score += 100;
+            Skey1.setVisible(false);
+            Skey1.setTranslateY(0);
+            keysList.add(Skey1);
+            addscore = true;
+            lblAddScore.setOpacity(1);
+        }
+        if (collision(Skey2, Bar) && event.getCode() == KeyCode.S) {
+            score += 100;
+            Skey2.setVisible(false);
+            Skey2.setTranslateY(0);
+            keysList.add(Skey2);
+            addscore = true;
+            lblAddScore.setOpacity(1);
+        }
+        if (collision(Akey2, Bar) && event.getCode() == KeyCode.A) {
+            score += 100;
+            Akey2.setVisible(false);
+            Akey2.setTranslateY(0);
+            keysList.add(Akey2);
+            addscore = true;
+            lblAddScore.setOpacity(1);
+        }
+        if (collision(Akey1, Bar) && event.getCode() == KeyCode.A) {
+            score += 100;
+            Akey1.setVisible(false);
+            Akey1.setTranslateY(0);
+            keysList.add(Akey1);
+            addscore = true;
+            lblAddScore.setOpacity(1);
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       
+
         list.add(1);
         list.add(2);
         list.add(3);
@@ -170,11 +309,12 @@ public class GameController implements Initializable {
         keysListCopy.add(Lkey2);
         Keychooser.setCycleCount(Timeline.INDEFINITE);
         Keychooser.play();
-         fallingkeys.setCycleCount(Timeline.INDEFINITE);
+        fallingkeys.setCycleCount(Timeline.INDEFINITE);
         fallingkeys.play();
-        // make a animation of the score going up by having a timer add 1 until it
-        // reaches the new score number
-        // create 20 objects that fall and when they pass the bar it respawns at the top
+        MediaViewIntro.setMediaPlayer(mediaPlayer);
+        mediaPlayer.play();
+
+        
 
     }
 }

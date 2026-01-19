@@ -29,6 +29,8 @@ public class MainApp extends Application {
         stage.setTitle(title);
         stage.setScene(scene);
         stage.show();
+        scene.getRoot().requestFocus();
+        stage.setOnCloseRequest(e -> System.exit(0));
     }
 
     private static Parent loadFXML(String fxml) throws IOException {

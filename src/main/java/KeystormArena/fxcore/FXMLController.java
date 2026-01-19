@@ -24,7 +24,7 @@ public class FXMLController implements Initializable {
 
     @FXML
     private Label Dkey;
-
+    
     @FXML
     private Label Jkey;
 
@@ -45,7 +45,8 @@ public class FXMLController implements Initializable {
 
     @FXML
     private Label lblTitle;
-
+    
+   
     Timeline timeline = new Timeline(new KeyFrame(Duration.millis(15), ae -> hover()));
     int hovertimer = 0;
     private void hover(){
