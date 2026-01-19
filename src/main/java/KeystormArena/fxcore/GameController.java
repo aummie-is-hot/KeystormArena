@@ -127,13 +127,13 @@ public class GameController implements Initializable {
                     name.setTranslateY(name.getTranslateY() + 0.3);
                     }
                     if(score>=1000&&score<2000){
-                        name.setTranslateY(name.getTranslateY() + 0.4);
+                        name.setTranslateY(name.getTranslateY() + 0.35);
                     }
                     if(score>=2000){
-                        name.setTranslateY(name.getTranslateY() + 0.5);
+                        name.setTranslateY(name.getTranslateY() + 0.355);
                     }
                     if(score>3000){
-                        name.setTranslateY(name.getTranslateY() + 0.7);
+                        name.setTranslateY(name.getTranslateY() + 0.36 );
                     }
                 }
                 if (name.getTranslateY() > 500) {
@@ -170,6 +170,14 @@ public class GameController implements Initializable {
     @FXML
     void KeyPressed(KeyEvent event) {
         score-=50;
+        if(event.getCode()==KeyCode.ESCAPE){
+            try {
+                
+            MainApp.setRoot("primary", "KeyStorm Arena");
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+        }
         if (collision(Lkey2, Bar) && event.getCode() == KeyCode.L) {
             score += 100;
             Lkey2.setVisible(false);
@@ -314,7 +322,7 @@ public class GameController implements Initializable {
         MediaViewIntro.setMediaPlayer(mediaPlayer);
         mediaPlayer.play();
 
-        
+        // add tutorial and main menu button
 
     }
 }

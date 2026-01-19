@@ -115,7 +115,7 @@ public class FXMLController implements Initializable {
     void btnStartA(ActionEvent event) {
         try {
             System.out.println("1");
-            MainApp.setRoot("game","Game");
+            MainApp.setRoot("game","KeyStorm Arena");
         } catch (Exception e) {
             System.out.println(e);
         }
