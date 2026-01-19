@@ -2,9 +2,9 @@
 package KeystormArena.fxcore;
 
 /*
-By: <Your Name Here>
-Date: 2026-01-16
-Program Details: <Program Description Here>
+By: Aum Markandey
+Date: 2026-01-15
+Program Details: A key press timing game with falling letters that you must type as they fall
 */
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,8 +19,9 @@ import javafx.scene.shape.Line;
 import javafx.util.Duration;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-
+import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.Collections;
 
 public class GameController implements Initializable {
     @FXML
@@ -68,174 +69,42 @@ public class GameController implements Initializable {
     private Label lblScore;
 
     int score = 0;
-    int random;
+    int random=0;
     Timeline fallingkeys = new Timeline(new KeyFrame(Duration.millis(5), ae -> keys()));
     Image test = new Image(getClass().getResource("/image.png").toString());
-    Timeline Keychooser = new Timeline(new KeyFrame(Duration.millis(250), ae -> KeyChooser()));
+    ArrayList<Integer> list = new ArrayList<>();
+    ArrayList<Label> keysList = new ArrayList<>();
+    ArrayList<Label> keysListCopy = new ArrayList<>();
 
-    private void KeyChooser(){
-        random = ThreadLocalRandom.current().nextInt(1,12+1);
+    Timeline Keychooser = new Timeline(new KeyFrame(Duration.millis(500), ae -> KeyChooser()));
+
+    private void KeyChooser() {
+        random = ThreadLocalRandom.current().nextInt(0, keysList.size()+1);
+         if (keysList.size()!=0){
+            keysList.get(random).setVisible(true);
+            keysList.get(random).setLayoutX(ThreadLocalRandom.current().nextInt(0, 600 + 1));
+            keysList.remove(random);
+            }
     }
-    private void keys() {
 
+    private void keys() {
+System.err.println(keysList.size());
         if (score < 500) {
 
-          
-
-
-           if(random==12){
-            Lkey1.setVisible(true);
- 
-           }
-            if(random==11){
-                Lkey2.setVisible(true);
- 
-            }
-            if(random==10){
-            Skey1.setVisible(true);    
-
-            }
-            if(random==9){
-            Skey2.setVisible(true);    
-
-            }
-            if(random==8){
-            Dkey1.setVisible(true);
-
-            }
-
-            if(random==7){
-                Dkey2.setVisible(true);
-
-            }
-
-            if(random==6){
-                Jkey1.setVisible(true);
-         
-            }
-            if(random==5){
-            Jkey2.setVisible(true);
-          
-            }
-            if(random==4){
-                Kkey1.setVisible(true);
-                
-            }
-            if(random==3){
-            Kkey2.setVisible(true);
            
-            }
-            if ( random==2){
-                
-                Akey2.setVisible(true);
-            }
-            if(random == 1){
-            Akey1.setVisible(true);
-            }
             // moving keys
-            if(Akey1.isVisible()){
-                
-            Akey1.setTranslateY(Akey1.getTranslateY() + 0.3);
-            }
-            if(Akey2.isVisible()){
-                
-            Akey2.setTranslateY(Akey2.getTranslateY() + 0.3);
-            }
 
-            if(Jkey1.isVisible()){
-                
-            Jkey1.setTranslateY(Jkey1.getTranslateY() + 0.3);
-            }
-            if(Jkey2.isVisible()){
-                
-            Jkey2.setTranslateY(Jkey2.getTranslateY() + 0.3);
-            }
-            if(Lkey1.isVisible()){
-                
-            Lkey1.setTranslateY(Lkey1.getTranslateY() + 0.3);
-            }
-            if(Lkey2.isVisible()){
-                
-            Lkey2.setTranslateY(Lkey2.getTranslateY() + 0.3);
-            }
-            if(Dkey1.isVisible()){
-                
-            Dkey1.setTranslateY(Dkey1.getTranslateY() + 0.3);
-            }
-            if(Dkey2.isVisible()){
-                
-            Dkey2.setTranslateY(Dkey2.getTranslateY() + 0.3);
-            }
-            if(Skey1.isVisible()){
-                
-            Skey1.setTranslateY(Skey1.getTranslateY() + 0.3);
-            }
-             if(Skey2.isVisible()){
-                
-            Skey2.setTranslateY(Skey2.getTranslateY() + 0.3);
-            }
-             if(Kkey1.isVisible()){
-                
-            Kkey1.setTranslateY(Kkey1.getTranslateY() + 0.3);
-            }
-            if(Kkey2.isVisible()){
-                
-            Kkey2.setTranslateY(Kkey2.getTranslateY() + 0.3);
-            }
-             
-           // reseting keys
-            if (Lkey2.getLayoutY()>450) {
-                Lkey2.setTranslateY(0);
-                Lkey2.setVisible(false);
-            }
-             if (Lkey1.getLayoutY()>450) {
-                Lkey1.setTranslateY(0);
-                Lkey1.setVisible(false);
-            }
-             if (Kkey2.getLayoutY()>450) {
-                Kkey2.setTranslateY(0);
-               Kkey2.setVisible(false);
-            }
-             if (Kkey1.getLayoutY()>450) {
-                Kkey1.setTranslateY(0);
-                Kkey1.setVisible(false);
-            }
-             if (Skey2.getLayoutY()>450) {
-                Skey2.setTranslateY(0);
-                Skey2.setVisible(false);
-            }
-             if (Skey1.getLayoutY()>450) {
-                Skey1.setTranslateY(0);
-                Skey1.setVisible(false);
-            }
-             if (Dkey1.getLayoutY()>450) {
-                Dkey1.setTranslateY(0);
-                
-                Dkey1.setVisible(false);
-            }
-             if (Dkey2.getLayoutY()>450) {
-                Dkey2.setTranslateY(0);
-                
-                Dkey2.setVisible(false);
-            }
-             if (Jkey2.getLayoutY()>450) {
-                Jkey2.setTranslateY(0);
-                
-                Jkey2.setVisible(false);
-            }
-             if (Jkey1.getLayoutY()>450) {
-                Jkey1.setTranslateY(0);
-                Jkey1.setVisible(false);
-            }
-             if (collision(Akey2, lblScore)) {
-                Akey2.setTranslateY(0);
-                Akey2.setVisible(false);
-            }
-            if (collision(Akey1, lblScore)) {
-                Akey1.setTranslateY(0);
-                Akey2.setVisible(false);
-            }
+            for (Label name : keysListCopy) {
+                if (name.isVisible()) {
+                    name.setTranslateY(name.getTranslateY() + 0.3);
+                }
+                if (name.getTranslateY() > 500) {
+                    name.setTranslateY(0);
+                    name.setVisible(false);
+                    keysList.add(name);
 
+                }
+            }
 
         }
     }
@@ -257,10 +126,47 @@ public class GameController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        fallingkeys.setCycleCount(Timeline.INDEFINITE);
-        fallingkeys.play();
-         Keychooser.setCycleCount(Timeline.INDEFINITE);
+       
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
+        list.add(7);
+        list.add(8);
+        list.add(9);
+        list.add(10);
+        list.add(11);
+        list.add(12);
+        keysList.add(Akey1);
+        keysList.add(Akey2);
+        keysList.add(Skey1);
+        keysList.add(Skey2);
+        keysList.add(Dkey1);
+        keysList.add(Dkey2);
+        keysList.add(Jkey1);
+        keysList.add(Jkey2);
+        keysList.add(Kkey1);
+        keysList.add(Kkey2);
+        keysList.add(Lkey1);
+        keysList.add(Lkey2);
+        keysListCopy.add(Akey1);
+        keysListCopy.add(Akey2);
+        keysListCopy.add(Skey1);
+        keysListCopy.add(Skey2);
+        keysListCopy.add(Dkey1);
+        keysListCopy.add(Dkey2);
+        keysListCopy.add(Jkey1);
+        keysListCopy.add(Jkey2);
+        keysListCopy.add(Kkey1);
+        keysListCopy.add(Kkey2);
+        keysListCopy.add(Lkey1);
+        keysListCopy.add(Lkey2);
+        Keychooser.setCycleCount(Timeline.INDEFINITE);
         Keychooser.play();
+         fallingkeys.setCycleCount(Timeline.INDEFINITE);
+        fallingkeys.play();
         // make a animation of the score going up by having a timer add 1 until it
         // reaches the new score number
         // create 20 objects that fall and when they pass the bar it respawns at the top

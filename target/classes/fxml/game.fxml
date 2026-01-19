@@ -5,7 +5,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #0F0F12;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="KeystormArena.fxcore.GameController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #0F0F12;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="KeystormArena.fxcore.GameController">
    <children>
       <Line fx:id="Bar" endX="252.0" layoutX="301.0" layoutY="418.0" startX="-254.0" stroke="WHITE" />
       <Label fx:id="lblScore" layoutX="-1.0" layoutY="446.0" prefHeight="34.0" prefWidth="600.0" style="-fx-font-family: consolas;" text="               score: " textFill="#eaeaea">
@@ -18,62 +18,62 @@
             <Font name="Arial Narrow" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="Akey2" layoutX="36.0" layoutY="14.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="42.0" prefWidth="20.0" text="A" textFill="#eaeaea" visible="false">
+      <Label fx:id="Akey2" layoutX="36.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="42.0" prefWidth="20.0" text="A" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Jkey1" layoutX="388.0" layoutY="26.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="34.0" prefWidth="20.0" text="J" textFill="#eaeaea" visible="false">
+      <Label fx:id="Jkey1" layoutX="388.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="34.0" prefWidth="20.0" text="J" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Skey1" layoutX="100.0" layoutY="192.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="42.0" prefWidth="20.0" text="S" textFill="#eaeaea" visible="false">
+      <Label fx:id="Skey1" layoutX="100.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="42.0" prefWidth="20.0" text="S" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Dkey1" layoutX="50.0" layoutY="298.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="34.0" prefWidth="10.0" text="D" textFill="#eaeaea" visible="false">
+      <Label fx:id="Dkey1" layoutX="46.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="34.0" prefWidth="10.0" text="D" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Lkey1" layoutX="454.0" layoutY="298.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="34.0" prefWidth="12.0" text="L" textFill="#eaeaea" visible="false">
+      <Label fx:id="Lkey1" layoutX="454.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="34.0" prefWidth="12.0" text="L" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Kkey1" layoutX="368.0" layoutY="164.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="42.0" prefWidth="12.0" text="K" textFill="#eaeaea" visible="false">
+      <Label fx:id="Kkey1" layoutX="368.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="42.0" prefWidth="12.0" text="K" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Dkey2" layoutX="60.0" layoutY="308.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="34.0" prefWidth="10.0" text="D" textFill="#eaeaea" visible="false">
+      <Label fx:id="Dkey2" layoutX="60.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="34.0" prefWidth="10.0" text="D" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Lkey2" layoutX="464.0" layoutY="308.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="34.0" prefWidth="12.0" text="L" textFill="#eaeaea" visible="false">
+      <Label fx:id="Lkey2" layoutX="464.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="34.0" prefWidth="12.0" text="L" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Kkey2" layoutX="378.0" layoutY="174.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="42.0" prefWidth="12.0" text="K" textFill="#eaeaea" visible="false">
+      <Label fx:id="Kkey2" layoutX="378.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="42.0" prefWidth="12.0" text="K" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Jkey2" layoutX="398.0" layoutY="36.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="34.0" prefWidth="20.0" text="J" textFill="#eaeaea" visible="false">
+      <Label fx:id="Jkey2" layoutX="398.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="34.0" prefWidth="20.0" text="J" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Akey1" layoutX="46.0" layoutY="24.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="42.0" prefWidth="20.0" text="A" textFill="#eaeaea" visible="false">
+      <Label fx:id="Akey1" layoutX="46.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="42.0" prefWidth="20.0" text="A" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Skey2" layoutX="110.0" layoutY="202.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="42.0" prefWidth="20.0" text="S" textFill="#eaeaea" visible="false">
+      <Label fx:id="Skey2" layoutX="110.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="42.0" prefWidth="20.0" text="S" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
