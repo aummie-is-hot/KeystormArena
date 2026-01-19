@@ -77,7 +77,7 @@ public class GameController implements Initializable {
     @FXML
     private Label lblScore;
     boolean addscore = false;
-    int score = 0;
+    int score = 1500;
     int random = 0;
     Timeline fallingkeys = new Timeline(new KeyFrame(Duration.millis(5), ae -> keys()));
     Image test = new Image(getClass().getResource("/image.png").toString());
@@ -127,13 +127,13 @@ public class GameController implements Initializable {
                     name.setTranslateY(name.getTranslateY() + 0.3);
                     }
                     if(score>=1000&&score<2000){
-                        name.setTranslateY(name.getTranslateY() + 0.35);
+                        name.setTranslateY(name.getTranslateY() + 0.32);
                     }
                     if(score>=2000){
-                        name.setTranslateY(name.getTranslateY() + 0.355);
+                        name.setTranslateY(name.getTranslateY() + 0.325);
                     }
                     if(score>3000){
-                        name.setTranslateY(name.getTranslateY() + 0.36 );
+                        name.setTranslateY(name.getTranslateY() + 0.33 );
                     }
                 }
                 if (name.getTranslateY() > 500) {
@@ -170,6 +170,7 @@ public class GameController implements Initializable {
     @FXML
     void KeyPressed(KeyEvent event) {
         score-=50;
+        Bar.setStyle("-fx-stroke: #E63946;");
         if(event.getCode()==KeyCode.ESCAPE){
             try {
                 
@@ -180,11 +181,13 @@ public class GameController implements Initializable {
         }
         if (collision(Lkey2, Bar) && event.getCode() == KeyCode.L) {
             score += 100;
+            
             Lkey2.setVisible(false);
             Lkey2.setTranslateY(0);
             keysList.add(Lkey2);
             addscore = true;
             lblAddScore.setOpacity(1);
+            
         }
         if (collision(Lkey1, Bar) && event.getCode() == KeyCode.L) {
             score += 100;
@@ -275,7 +278,10 @@ public class GameController implements Initializable {
             lblAddScore.setOpacity(1);
         }
     }
-
+        @FXML
+    void KeyReleased(KeyEvent event) {
+        Bar.setStyle("-fx-stroke: #ffffff;");
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -323,6 +329,7 @@ public class GameController implements Initializable {
         mediaPlayer.play();
 
         // add tutorial and main menu button
-
+        // add miss animations and hit animations when clicked the key on time
+        // fix speed issues
     }
 }
