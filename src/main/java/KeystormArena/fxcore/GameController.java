@@ -83,7 +83,7 @@ public class GameController implements Initializable {
          random = ThreadLocalRandom.current().nextInt(0, keysList.size()+1);
          if (keysList.size()!=0){
             keysList.get(random).setVisible(true);
-            keysList.get(random).setLayoutX(ThreadLocalRandom.current().nextInt(0, 600 + 1));
+            keysList.get(random).setLayoutX(ThreadLocalRandom.current().nextInt(36, 534 + 1));
             keysList.remove(random);
             }
        } catch (Exception e) {
