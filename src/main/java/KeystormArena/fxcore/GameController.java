@@ -127,13 +127,13 @@ public class GameController implements Initializable {
                     name.setTranslateY(name.getTranslateY() + 0.3);
                     }
                     if(score>=1000&&score<2000){
-                        name.setTranslateY(name.getTranslateY() + 0.5);
+                        name.setTranslateY(name.getTranslateY() + 0.4);
                     }
                     if(score>=2000){
-                        name.setTranslateY(name.getTranslateY() + 0.8);
+                        name.setTranslateY(name.getTranslateY() + 0.5);
                     }
                     if(score>3000){
-                        name.setTranslateY(name.getTranslateY() + 1);
+                        name.setTranslateY(name.getTranslateY() + 0.7);
                     }
                 }
                 if (name.getTranslateY() > 500) {
