@@ -79,16 +79,21 @@ public class GameController implements Initializable {
     Timeline Keychooser = new Timeline(new KeyFrame(Duration.millis(500), ae -> KeyChooser()));
 
     private void KeyChooser() {
-        random = ThreadLocalRandom.current().nextInt(0, keysList.size()+1);
+       try {
+         random = ThreadLocalRandom.current().nextInt(0, keysList.size()+1);
          if (keysList.size()!=0){
             keysList.get(random).setVisible(true);
             keysList.get(random).setLayoutX(ThreadLocalRandom.current().nextInt(0, 600 + 1));
             keysList.remove(random);
             }
+       } catch (Exception e) {
+        // TODO: handle exception
+       }
+       
     }
 
     private void keys() {
-System.err.println(keysList.size());
+
         if (score < 500) {
 
            
