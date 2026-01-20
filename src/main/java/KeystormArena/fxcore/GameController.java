@@ -19,6 +19,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -73,11 +74,13 @@ public class GameController implements Initializable {
     private MediaView MediaViewIntro;
     @FXML
     private Label lblAddScore;
+      @FXML
+    private Rectangle RectangleFade;
 
     @FXML
     private Label lblScore;
     boolean addscore = false;
-    int score = 1500;
+    int score =0;
     int random = 0;
     Timeline fallingkeys = new Timeline(new KeyFrame(Duration.millis(5), ae -> keys()));
     Image test = new Image(getClass().getResource("/image.png").toString());
@@ -87,8 +90,9 @@ public class GameController implements Initializable {
     Media media = new Media(getClass().getResource("/Intro.mp4").toString());
     MediaPlayer mediaPlayer = new MediaPlayer(media);
     Timeline Keychooser = new Timeline(new KeyFrame(Duration.millis(500), ae -> KeyChooser()));
+    Timeline intro = new Timeline(new KeyFrame(Duration.millis(500), ae -> intro()));
     int introtime = 0;
-   
+    double speed = 0.3;
     private void KeyChooser() {
         if(score<0){
             System.exit(0);
@@ -105,35 +109,45 @@ public class GameController implements Initializable {
         }
 
     }
-
-    private void keys() {
-        if(addscore){
+    private void intro(){
+         if(addscore){
            
             lblAddScore.setOpacity(lblAddScore.getOpacity()-0.005);
         }
-        lblScore.setText("Score: " + score);
+        
         introtime += 1;
         if (introtime > 260) {
             MediaViewIntro.setVisible(false);
+            RectangleFade.setOpacity(RectangleFade.getOpacity()-0.005);
         }
+        
+    }
+    private void keys() {
+        
+        lblScore.setText("Score: " + score);
+        
        
 
             // moving keys
 
             for (Label name : keysListCopy) {
                 if (name.isVisible()) {
-                    if(score<=1000){
+
+                    name.setTranslateY(name.getTranslateY() + speed);
+                    
+                     if(score>=1000){
+                        speed = 0.4;
+                    }
+                     if(score==2000){
+                        name.setTranslateY(0);
+                        speed = 0.6;
                         
-                    name.setTranslateY(name.getTranslateY() + 0.3);
                     }
-                    if(score>=1000&&score<2000){
-                        name.setTranslateY(name.getTranslateY() + 0.32);
-                    }
-                    if(score>=2000){
-                        name.setTranslateY(name.getTranslateY() + 0.325);
-                    }
-                    if(score>3000){
-                        name.setTranslateY(name.getTranslateY() + 0.33 );
+                     if(score==3000){
+                        name.setTranslateY(0);
+                     
+                        speed = 0.7;
+                        score+=50;
                     }
                 }
                 if (name.getTranslateY() > 500) {
@@ -321,13 +335,11 @@ public class GameController implements Initializable {
         keysListCopy.add(Kkey2);
         keysListCopy.add(Lkey1);
         keysListCopy.add(Lkey2);
-        Keychooser.setCycleCount(Timeline.INDEFINITE);
-        Keychooser.play();
-        fallingkeys.setCycleCount(Timeline.INDEFINITE);
-        fallingkeys.play();
+        
         MediaViewIntro.setMediaPlayer(mediaPlayer);
         mediaPlayer.play();
-
+        intro.setCycleCount(Timeline.INDEFINITE);
+        intro.play();
         // add tutorial and main menu button
         // add miss animations and hit animations when clicked the key on time
         // fix speed issues

@@ -4,9 +4,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" focusTraversable="true" onKeyPressed="#KeyPressed" onKeyReleased="#KeyReleased" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #0F0F12;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="KeystormArena.fxcore.GameController">
+<AnchorPane id="AnchorPane" focusTraversable="true" onKeyPressed="#KeyPressed" onKeyReleased="#KeyReleased" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #0F0F12;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="KeystormArena.fxcore.GameController">
    <children>
       <Line fx:id="Bar" endX="252.0" layoutX="301.0" layoutY="418.0" startX="-254.0" stroke="WHITE" />
       <Label fx:id="lblScore" focusTraversable="false" layoutX="208.0" layoutY="446.0" prefHeight="34.0" prefWidth="229.0" style="-fx-font-family: consolas;" text="score: " textFill="#eaeaea">
@@ -79,6 +80,7 @@
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <MediaView fx:id="MediaViewIntro" fitHeight="490.0" fitWidth="590.0" layoutX="-2.0" layoutY="5.0" preserveRatio="false" />
+      <Rectangle fx:id="RectangleFade" arcHeight="5.0" arcWidth="5.0" fill="#280505" height="500.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <MediaView fx:id="MediaViewIntro" fitHeight="500.0" fitWidth="600.0" preserveRatio="false" />
    </children>
 </AnchorPane>
