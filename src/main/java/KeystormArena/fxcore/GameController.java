@@ -141,12 +141,12 @@ public class GameController implements Initializable {
                         speed = 0.4;
                     }
                      if(score==2000){
-                        name.setTranslateY(0);
+                      
                         speed = 0.6;
                         
                     }
                      if(score==3000){
-                        name.setTranslateY(0);
+                       
                      
                         speed = 0.7;
                         score+=50;
