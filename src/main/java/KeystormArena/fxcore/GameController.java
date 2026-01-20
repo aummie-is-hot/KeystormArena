@@ -76,7 +76,8 @@ public class GameController implements Initializable {
     private Label lblAddScore;
       @FXML
     private Rectangle RectangleFade;
-
+    MediaPlayer player;
+    
     @FXML
     private Label lblScore;
     boolean addscore = false;
@@ -94,7 +95,7 @@ public class GameController implements Initializable {
     double speed = 0.3;
     private void KeyChooser() {
         
-        if(score==0){
+        if(score<=0){
             try {
                  MainApp.setRoot("primary","KeyStorm Arena");
                  Keychooser.stop();
@@ -140,16 +141,16 @@ public class GameController implements Initializable {
                      if(score>=1000){
                         speed = 0.4;
                     }
-                     if(score==2000){
+                     if(score>=2000){
                       
                         speed = 0.6;
                         
                     }
-                     if(score==3000){
+                     if(score>=3000){
                        
                      
-                        speed = 0.7;
-                        score+=50;
+                        speed = 0.8;
+                        
                     }
                 }
                 if (name.getTranslateY() > 500) {
@@ -343,7 +344,10 @@ public class GameController implements Initializable {
         fallingkeys.play();
         MediaViewIntro.setMediaPlayer(mediaPlayer);
         mediaPlayer.play();
-
+        player = new MediaPlayer((new Media(getClass().getResource("/Introsound.mp3").toString())));
+        
+        player.setVolume(1.1);
+        player.play();
         // add tutorial and main menu button
         // add miss animations and hit animations when clicked the key on time
         // fix speed issues
