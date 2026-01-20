@@ -90,7 +90,6 @@ public class GameController implements Initializable {
     Media media = new Media(getClass().getResource("/Intro.mp4").toString());
     MediaPlayer mediaPlayer = new MediaPlayer(media);
     Timeline Keychooser = new Timeline(new KeyFrame(Duration.millis(500), ae -> KeyChooser()));
-    Timeline intro = new Timeline(new KeyFrame(Duration.millis(500), ae -> intro()));
     int introtime = 0;
     double speed = 0.3;
     private void KeyChooser() {
@@ -109,23 +108,18 @@ public class GameController implements Initializable {
         }
 
     }
-    private void intro(){
-         if(addscore){
+
+    private void keys() {
+        if(addscore){
            
             lblAddScore.setOpacity(lblAddScore.getOpacity()-0.005);
         }
-        
+        lblScore.setText("Score: " + score);
         introtime += 1;
         if (introtime > 260) {
             MediaViewIntro.setVisible(false);
             RectangleFade.setOpacity(RectangleFade.getOpacity()-0.005);
         }
-        
-    }
-    private void keys() {
-        
-        lblScore.setText("Score: " + score);
-        
        
 
             // moving keys
@@ -335,11 +329,13 @@ public class GameController implements Initializable {
         keysListCopy.add(Kkey2);
         keysListCopy.add(Lkey1);
         keysListCopy.add(Lkey2);
-        
+        Keychooser.setCycleCount(Timeline.INDEFINITE);
+        Keychooser.play();
+        fallingkeys.setCycleCount(Timeline.INDEFINITE);
+        fallingkeys.play();
         MediaViewIntro.setMediaPlayer(mediaPlayer);
         mediaPlayer.play();
-        intro.setCycleCount(Timeline.INDEFINITE);
-        intro.play();
+
         // add tutorial and main menu button
         // add miss animations and hit animations when clicked the key on time
         // fix speed issues

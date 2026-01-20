@@ -13,18 +13,19 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 
 import java.util.concurrent.ThreadLocalRandom;
 public class FXMLController implements Initializable {
-     @FXML
+    @FXML
     private Label Akey;
 
     @FXML
     private Label Dkey;
-    
+
     @FXML
     private Label Jkey;
 
@@ -35,16 +36,28 @@ public class FXMLController implements Initializable {
     private Label Lkey;
 
     @FXML
+    private Pane PaneTutorial;
+
+    @FXML
     private Label Skey;
 
     @FXML
     private Button btnExit;
 
     @FXML
+    private Button btnOkay;
+
+    @FXML
     private Button btnStart;
 
     @FXML
+    private Button btnTutorial;
+
+    @FXML
     private Label lblTitle;
+
+    @FXML
+    private Label lblTutorial;
     
    
     Timeline timeline = new Timeline(new KeyFrame(Duration.millis(15), ae -> hover()));
@@ -104,7 +117,15 @@ public class FXMLController implements Initializable {
     }
     
 
+    @FXML
+    void btnOkayA(ActionEvent event) {
+        PaneTutorial.setVisible(false);
+    }
 
+    @FXML
+    void btnTutorialA(ActionEvent event) {
+        PaneTutorial.setVisible(true);
+    }
 
     @FXML
     void btnExitA(ActionEvent event) {
