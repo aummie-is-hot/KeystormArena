@@ -80,7 +80,7 @@ public class GameController implements Initializable {
     @FXML
     private Label lblScore;
     boolean addscore = false;
-    int score =0;
+    int score =100;
     int random = 0;
     Timeline fallingkeys = new Timeline(new KeyFrame(Duration.millis(5), ae -> keys()));
     Image test = new Image(getClass().getResource("/image.png").toString());
@@ -93,8 +93,16 @@ public class GameController implements Initializable {
     int introtime = 0;
     double speed = 0.3;
     private void KeyChooser() {
-        if(score<0){
-            System.exit(0);
+        
+        if(score==0){
+            try {
+                 MainApp.setRoot("primary","KeyStorm Arena");
+                 Keychooser.stop();
+                
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+           
         }
         try {
             random = ThreadLocalRandom.current().nextInt(0, keysList.size() + 1);
