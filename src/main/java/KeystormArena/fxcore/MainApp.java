@@ -14,7 +14,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class MainApp extends Application {
     private static Stage stage;
-public static int score;
+public static int score = 100;
 MediaPlayer player;
 int song;
 private final String[] songs = {

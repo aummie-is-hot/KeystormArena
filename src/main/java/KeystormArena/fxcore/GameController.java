@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -77,11 +78,16 @@ public class GameController implements Initializable {
       @FXML
     private Rectangle RectangleFade;
     MediaPlayer player;
-    
+      @FXML
+    private Button btnExit;
     @FXML
     private Label lblScore;
+    @FXML
+    private Rectangle rctLose;
+    @FXML
+    private Label lblLose;
     boolean addscore = false;
-    int score =100;
+    int score =MainApp.score;
     int random = 0;
     Timeline fallingkeys = new Timeline(new KeyFrame(Duration.millis(5), ae -> keys()));
     Image test = new Image(getClass().getResource("/image.png").toString());
@@ -96,13 +102,13 @@ public class GameController implements Initializable {
     private void KeyChooser() {
         
         if(score<=0){
-            try {
-                 MainApp.setRoot("primary","KeyStorm Arena");
-                 Keychooser.stop();
-                
-            } catch (Exception e) {
-                // TODO: handle exception
-            }
+
+            
+            fallingkeys.stop();
+            lblLose.setVisible(true);
+            rctLose.setVisible(true);
+            Keychooser.stop();
+            
            
         }
         try {
@@ -183,19 +189,31 @@ public class GameController implements Initializable {
     void LabelExited(MouseEvent event) {
 
     }
+    @FXML
+    void btnExitA(ActionEvent event) {
+        try {
+            MainApp.score = score;
+            MainApp.setRoot("primary","KeyStorm Arena");
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+    }
+      @FXML
+    void ButtonEntered(MouseEvent event) {
+        Button sourcebtn = (Button) event.getSource();
+       sourcebtn.setStyle("-fx-text-fill: #E63946;"+"-fx-background-color: transparent;");
+    }
 
+    @FXML
+    void ButtonExited(MouseEvent event) {
+        Button sourcebtn = (Button) event.getSource();
+       sourcebtn.setStyle("-fx-text-fill: #eaeaea;"+"-fx-background-color: transparent;");
+    }
     @FXML
     void KeyPressed(KeyEvent event) {
         score-=50;
         Bar.setStyle("-fx-stroke: #E63946;");
-        if(event.getCode()==KeyCode.ESCAPE){
-            try {
-                
-            MainApp.setRoot("primary", "KeyStorm Arena");
-            } catch (Exception e) {
-                // TODO: handle exception
-            }
-        }
+        
         if (collision(Lkey2, Bar) && event.getCode() == KeyCode.L) {
             score += 100;
             

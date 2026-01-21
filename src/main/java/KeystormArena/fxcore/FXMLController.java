@@ -67,19 +67,19 @@ public class FXMLController implements Initializable {
         if (hovertimer <= 50) {
             lblTitle.setTranslateY(lblTitle.getTranslateY() + 0.2);
             Kkey.setTranslateY(Kkey.getTranslateY() + 0.2);
-            Akey.setTranslateY(Kkey.getTranslateY() + 0.2);
-            Skey.setTranslateY(Kkey.getTranslateY() + 0.2);
-            Dkey.setTranslateY(Kkey.getTranslateY() + 0.2);
-            Jkey.setTranslateY(Kkey.getTranslateY() + 0.2);
-            Lkey.setTranslateY(Kkey.getTranslateY() + 0.2);
+            Akey.setTranslateY(Akey.getTranslateY() + 0.2);
+            Skey.setTranslateY(Skey.getTranslateY() + 0.2);
+            Dkey.setTranslateY(Dkey.getTranslateY() + 0.2);
+            Jkey.setTranslateY(Jkey.getTranslateY() + 0.2);
+            Lkey.setTranslateY(Lkey.getTranslateY() + 0.2);
         } else if (hovertimer >= 50 && hovertimer < 100) {
             lblTitle.setTranslateY(lblTitle.getTranslateY() - 0.2);
             Kkey.setTranslateY(Kkey.getTranslateY() - 0.2);
-            Akey.setTranslateY(Kkey.getTranslateY() - 0.2);
-            Skey.setTranslateY(Kkey.getTranslateY() - 0.2);
-            Dkey.setTranslateY(Kkey.getTranslateY() - 0.2);
-            Jkey.setTranslateY(Kkey.getTranslateY() - 0.2);
-            Lkey.setTranslateY(Kkey.getTranslateY() - 0.2);
+            Akey.setTranslateY(Akey.getTranslateY() - 0.2);
+            Skey.setTranslateY(Skey.getTranslateY() - 0.2);
+            Dkey.setTranslateY(Dkey.getTranslateY() - 0.2);
+            Jkey.setTranslateY(Jkey.getTranslateY() - 0.2);
+            Lkey.setTranslateY(Lkey.getTranslateY() - 0.2);
         } else if (hovertimer >= 100) {
             hovertimer = 0;
         }
