@@ -23,7 +23,8 @@ private final String[] songs = {
     "/MyType.mp3",
     "/VivaLaVida.mp3",
     "/Timber.mp3",
-    "/Vicetone.mp3"
+    "/Vicetone.mp3",
+    "/Vers.mp3"
 };
 private void PlayRandomSong() {
     // stop and delete old player cuz the old one cant be set to a new song for sum reason
