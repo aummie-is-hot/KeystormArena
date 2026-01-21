@@ -58,7 +58,7 @@
       </Button>
       <Pane fx:id="PaneTutorial" layoutX="142.0" layoutY="105.0" prefHeight="289.0" prefWidth="317.0" style="-fx-background-color: #0F0F12;" visible="false">
          <children>
-            <Label fx:id="lblTutorial" layoutY="-11.0" minHeight="16" minWidth="69" prefHeight="251.0" prefWidth="317.0" text="A,S,D,J,K,L these keys will fall and when they touch the white bar click the corresponding key on your keyboard matching the key to earn points. If you miss or click a key without it touching the bar you lose points. If your score reachs 0 you get sent back to the main menu and restart. Hit the exit key when in game to return to the main menu" textFill="#eaeaea" wrapText="true">
+            <Label fx:id="lblTutorial" layoutY="-11.0" minHeight="16" minWidth="69" prefHeight="251.0" prefWidth="317.0" text="A,S,D,J,K,L these keys will fall and when they touch the white bar click the corresponding key on your keyboard matching the key to earn points. If you miss or click a key without it touching the bar you lose points. Hit the exit key when in game to return to the main menu" textFill="#eaeaea" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>

@@ -192,7 +192,13 @@ public class GameController implements Initializable {
     @FXML
     void btnExitA(ActionEvent event) {
         try {
-            MainApp.score = score;
+            if(score<=0){
+               MainApp.score=100;
+            }
+            else{
+                MainApp.score = score;
+            }
+            
             MainApp.setRoot("primary","KeyStorm Arena");
         } catch (Exception e) {
             // TODO: handle exception
@@ -319,7 +325,8 @@ public class GameController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        rctLose.setVisible(false);
+        lblLose.setVisible(false);
         list.add(1);
         list.add(2);
         list.add(3);
