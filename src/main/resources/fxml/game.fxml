@@ -21,62 +21,62 @@
             <Font name="Arial Narrow" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="Akey2" focusTraversable="false" layoutX="36.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="42.0" prefWidth="20.0" text="A" textFill="#eaeaea" visible="false">
+      <Label fx:id="Akey2" focusTraversable="false" layoutX="36.0" layoutY="-72.0" prefHeight="42.0" prefWidth="20.0" text="A" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Jkey1" focusTraversable="false" layoutX="388.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="34.0" prefWidth="20.0" text="J" textFill="#eaeaea" visible="false">
+      <Label fx:id="Jkey1" focusTraversable="false" layoutX="388.0" layoutY="-72.0" prefHeight="34.0" prefWidth="20.0" text="J" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Skey1" focusTraversable="false" layoutX="100.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="42.0" prefWidth="20.0" text="S" textFill="#eaeaea" visible="false">
+      <Label fx:id="Skey1" focusTraversable="false" layoutX="100.0" layoutY="-72.0" prefHeight="42.0" prefWidth="20.0" text="S" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Dkey1" focusTraversable="false" layoutX="46.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="34.0" prefWidth="10.0" text="D" textFill="#eaeaea" visible="false">
+      <Label fx:id="Dkey1" focusTraversable="false" layoutX="46.0" layoutY="-72.0" prefHeight="34.0" prefWidth="10.0" text="D" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Lkey1" focusTraversable="false" layoutX="454.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="34.0" prefWidth="12.0" text="L" textFill="#eaeaea" visible="false">
+      <Label fx:id="Lkey1" focusTraversable="false" layoutX="454.0" layoutY="-72.0" prefHeight="34.0" prefWidth="12.0" text="L" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Kkey1" focusTraversable="false" layoutX="368.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="42.0" prefWidth="12.0" text="K" textFill="#eaeaea" visible="false">
+      <Label fx:id="Kkey1" focusTraversable="false" layoutX="368.0" layoutY="-72.0" prefHeight="42.0" prefWidth="12.0" text="K" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Dkey2" focusTraversable="false" layoutX="60.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="34.0" prefWidth="10.0" text="D" textFill="#eaeaea" visible="false">
+      <Label fx:id="Dkey2" focusTraversable="false" layoutX="60.0" layoutY="-72.0" prefHeight="34.0" prefWidth="10.0" text="D" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Lkey2" focusTraversable="false" layoutX="464.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="34.0" prefWidth="12.0" text="L" textFill="#eaeaea" visible="false">
+      <Label fx:id="Lkey2" focusTraversable="false" layoutX="464.0" layoutY="-72.0" prefHeight="34.0" prefWidth="12.0" text="L" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Kkey2" focusTraversable="false" layoutX="378.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="42.0" prefWidth="12.0" text="K" textFill="#eaeaea" visible="false">
+      <Label fx:id="Kkey2" focusTraversable="false" layoutX="378.0" layoutY="-72.0" prefHeight="42.0" prefWidth="12.0" text="K" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Jkey2" focusTraversable="false" layoutX="398.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="34.0" prefWidth="20.0" text="J" textFill="#eaeaea" visible="false">
+      <Label fx:id="Jkey2" focusTraversable="false" layoutX="398.0" layoutY="-72.0" prefHeight="34.0" prefWidth="20.0" text="J" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Akey1" focusTraversable="false" layoutX="46.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="42.0" prefWidth="20.0" text="A" textFill="#eaeaea" visible="false">
+      <Label fx:id="Akey1" focusTraversable="false" layoutX="46.0" layoutY="-72.0" prefHeight="42.0" prefWidth="20.0" text="A" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="Skey2" focusTraversable="false" layoutX="110.0" layoutY="-72.0" onMouseEntered="#LabelEntered" onMouseExited="#LabelExited" prefHeight="42.0" prefWidth="20.0" text="S" textFill="#eaeaea" visible="false">
+      <Label fx:id="Skey2" focusTraversable="false" layoutX="110.0" layoutY="-72.0" prefHeight="42.0" prefWidth="20.0" text="S" textFill="#eaeaea" visible="false">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font>

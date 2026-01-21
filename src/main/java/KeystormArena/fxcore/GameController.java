@@ -180,15 +180,7 @@ public class GameController implements Initializable {
         return (block1.getBoundsInParent().intersects(block2.getBoundsInParent()));
     }
 
-    @FXML
-    void LabelEntered(MouseEvent event) {
-
-    }
-
-    @FXML
-    void LabelExited(MouseEvent event) {
-
-    }
+    
     @FXML
     void btnExitA(ActionEvent event) {
         try {
