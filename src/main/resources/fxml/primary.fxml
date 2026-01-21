@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #0F0F12;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="KeystormArena.fxcore.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #0F0F12;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="KeystormArena.fxcore.FXMLController">
     <children>
         <Button fx:id="btnStart" layoutX="200.0" layoutY="144.0" onAction="#btnStartA" onMouseEntered="#ButtonEntered" onMouseExited="#ButtonExited" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="Start" textFill="#eaeaea">
          <font>
@@ -58,7 +58,7 @@
       </Button>
       <Pane fx:id="PaneTutorial" layoutX="142.0" layoutY="105.0" prefHeight="289.0" prefWidth="317.0" style="-fx-background-color: #0F0F12;" visible="false">
          <children>
-            <Label fx:id="lblTutorial" layoutY="-11.0" minHeight="16" minWidth="69" prefHeight="231.0" prefWidth="317.0" text="A,S,D,J,K,L these keys will fall and when they touch the white bar click the corresponding key on your keyboard matching the key to earn points. If you miss or click a key without it touching the bar you lose points. If your score reachs 0 you get sent back to the main menu and restart" textFill="#eaeaea" wrapText="true">
+            <Label fx:id="lblTutorial" layoutY="-11.0" minHeight="16" minWidth="69" prefHeight="251.0" prefWidth="317.0" text="A,S,D,J,K,L these keys will fall and when they touch the white bar click the corresponding key on your keyboard matching the key to earn points. If you miss or click a key without it touching the bar you lose points. If your score reachs 0 you get sent back to the main menu and restart. Hit escape to go to main menu" textFill="#eaeaea" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>

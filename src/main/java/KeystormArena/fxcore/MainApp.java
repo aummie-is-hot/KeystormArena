@@ -33,7 +33,7 @@ private void PlayRandomSong() {
     }
 
     // pick a random song
-    int index = ThreadLocalRandom.current().nextInt(songs.length);
+    int index = ThreadLocalRandom.current().nextInt(0, songs.length);
 
     // create new MediaPlayer
     player = new MediaPlayer(
